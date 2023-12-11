@@ -1,0 +1,64 @@
+.icon-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.1rem 0.2rem;
+    z-index: 10;
+
+    .sd-icon {
+        position: relative;
+        z-index: 1;
+    }
+
+    .icon-shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+    }
+    .shadow-layer {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110%;
+        height: 100%;
+        z-index: -10;
+        // background-color: aqua
+    }
+}
+
+.shadow-blur-less {
+    @include shadow-blur(0.125rem);
+}
+.shadow-blur-mid {
+    @include shadow-blur(0.2188rem);
+}
+.shadow-blur-more {
+    @include shadow-blur(0.3125rem);
+}
+.shadow-position-near {
+    @include shadow-position(0.13rem, 0.13rem);
+}
+.shadow-position-mid {
+    @include shadow-position(0.2rem, 0.2rem);
+}
+.shadow-position-far {
+    @include shadow-position(0.3rem, 0.3rem);
+}
+
+.shadow-color-light {
+    @include shadow-color($gray-300, 15%);
+}
+.shadow-color-mid {
+    @include shadow-color($gray-300, 45%);
+}
+.shadow-color-dark {
+    @include shadow-color($gray-300, 75%);
+}
+
+@each $key, $val in $theme-colors {
+    .icon-#{$key} {
+        color: $val;
+    }
+}

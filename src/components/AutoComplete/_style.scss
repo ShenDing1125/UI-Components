@@ -1,0 +1,64 @@
+.sd-auto-complete {
+    position: relative;
+}
+.sd-suggestion-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 19rem;
+    overflow-y: auto;
+    list-style: none;
+    padding-left: 0;
+    white-space: nowrap;
+    background: $white;
+    z-index: 100;
+    border: $menu-border-width solid $menu-border-color;
+    box-shadow: $auto-complete-box-shadow;
+    border-radius: $input-border-radius;
+
+    .icon-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 75px;
+    }
+    .suggestion-item {
+        display: flex;
+        align-items: center;
+        height: 2.375rem;
+        cursor: pointer;
+        transition: $menu-transition;
+        color: $body-color;
+        &.is-active {
+            background: $menu-item-active-color !important;
+            color: $white !important;
+            text-shadow: 0 0 0.25em white;
+        }
+        &:hover {
+            color: $menu-item-active-color;
+        }
+    }
+    .suggestion-remind {
+        font-style: italic;
+        color: $gray-600;
+    }
+}
+
+.auto-complete-size-sm .suggestion-item {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    font-size: $input-font-size-sm;
+    border-radius: $input-border-radius-sm;
+}
+
+.auto-complete-size-md .suggestion-item {
+    padding: $input-padding-y-md $input-padding-x-md;
+    font-size: $input-font-size-md;
+    border-radius: $input-border-radius-md;
+}
+
+.auto-complete-size-lg .suggestion-item {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    font-size: $input-font-size-lg;
+    border-radius: $input-border-radius-lg;
+}

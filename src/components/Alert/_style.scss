@@ -1,0 +1,61 @@
+$alert-lighten-colors: (
+    'default': #e6f4ff,
+    'success': #f6ffed,
+    'warning': #fffbe6,
+    'danger': #fff2f0
+);
+@each $color, $value in $alert-lighten-colors {
+    .alert-#{$color} {
+        @include alert-style(darken($value, 2%), darken($value, 15%), $gray-900);
+        box-shadow: 0.2rem 0.2rem 0.35rem darken($value, 3%);
+    }
+}
+
+.sd-alert {
+    position: relative;
+    top: 0;
+    left: 50%;
+    display: block;
+    align-items: center;
+    translate: -50%;
+    padding: $alert-padding-y $alert-padding-x;
+    margin-bottom: $alert-margin-bottom;
+    border-radius: $alert-border-radius;
+    padding-right: 2.8125rem;
+    z-index: 9999;
+    .alert-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: start;
+        padding: $alert-padding-y $alert-padding-x;
+        color: inherit;
+        cursor: pointer;
+    }
+    .bold-title {
+        font-size: $font-size-lg;
+        font-weight: 600;
+    }
+    .alert-desc {
+        word-wrap: break-word;
+        font-size: $alert-description-font-size;
+        margin: $alert-description-top-margin 0 0;
+    }
+}
+
+.alert-size-sm {
+    @include alert-size($alert-size-weight-sm, $alert-size-min-height-sm);
+}
+
+.alert-size-md {
+    @include alert-size($alert-size-weight-md, $alert-size-min-height-md);
+}
+
+.alert-size-lg {
+    @include alert-size($alert-size-weight-lg, $alert-size-min-height-lg);
+}
+
+.alert-size-full {
+    @include alert-size($alert-size-weight-full, $alert-size-min-height-full);
+}

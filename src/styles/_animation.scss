@@ -1,0 +1,5 @@
+// scale
+@include scale-animation('top', scaleY(0), scaleY(1), center top);
+@include scale-animation('left', scale(.45, .45), scale(1, 1), top left);
+@include scale-animation('right', scale(.45, .45), scale(1, 1), top right);
+@include scale-animation('bottom', scaleY(0), scaleY(1),  center bottom);

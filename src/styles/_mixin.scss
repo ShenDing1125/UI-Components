@@ -1,0 +1,112 @@
+// Button
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+@mixin button-style(
+  $background,
+  $border,
+  $color,
+  $hover-background: lighten($background, 7.5%),
+  $hover-border: lighten($border, 10%),
+  $hover-color: $color,
+) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+  &:hover {
+    color: $hover-color;
+    background: $hover-background;
+    border-color: $hover-border;  
+  }
+  &:focus,
+  &.focus {
+    color:$hover-color;
+    background: $hover-background;
+    border-color: $hover-border; 
+    outline: 0;   
+  }
+  &:disabled,
+  &.disabled {
+    color: $color;
+    background: $background;
+    border-color: $border;  
+  }
+}
+
+// Alert
+@mixin alert-style($background, $border, $color) {
+  background: $background;
+  border: 1px $border solid;
+  // border-color: $border;
+  color: $color;
+}
+
+@mixin alert-size($width, $height) {
+  width: $width;
+  min-height: $height;
+}
+
+// @mixin alert-position() {
+//   position: relative;
+//   top: ;
+// }
+
+// Icon
+@mixin shadow-position($x,$y) {
+  transform: translate($x,$y);
+}
+
+@mixin shadow-blur($blur) {
+  backdrop-filter: blur($blur);
+}
+
+@mixin shadow-color($color, $weight) {
+  color: darken($color, $weight);
+}
+
+// Transition
+@mixin scale-animation(
+  $direction: 'top',
+  $scaleStart: scaleY(0),
+  $scaleEnd: scaleY(1),
+  $origin: center top,
+) {
+  .scale-in-#{$direction}-enter {
+    opacity: 0;
+    transform: $scaleStart;
+  }
+  .scale-in-#{$direction}-enter-active {
+    opacity: 1;
+    transform: $scaleEnd;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    transform-origin: $origin
+  }
+  .scale-in-#{$direction}-exit {
+    opacity: 1;
+  }
+  .scale-in-#{$direction}-exit-active {
+    opacity: 0;
+    transform: $scaleStart;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    transform-origin: $origin;
+  }
+}
+
+
+@mixin border-right-radius($radios) {
+  border-top-right-radius: $radios;
+  border-bottom-right-radius: $radios;
+}
+
+@mixin border-left-radius($radios) {
+  border-top-left-radius: $radios;
+  border-bottom-left-radius: $radios;
+}
+
+@mixin border-top-radius($radios) {
+  border-top-left-radius: $radios;
+  border-top-right-radius: $radios;
+}

@@ -1,0 +1,114 @@
+.sd-input-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    .icon-wrapper {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 2.1875rem;
+        color: $input-color;
+        svg {
+            color: $input-placeholder-color;
+        }
+
+        .blur-layout {
+            display: inline-block;
+            position: absolute;
+            right: 2.1875rem;
+            top: $input-border-width;
+            height: calc(100% - $input-border-width * 2);
+            width: 0.5rem;
+            // background-color: aqua;
+            backdrop-filter: blur(0.055rem);
+        }
+    }
+}
+.sd-input-inner {
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+    transition: $input-transition;
+    padding-right: 2.1875rem; // that is Icon size
+
+    &:hover {
+        border-color: $input-focus-border-color;
+    }
+    &:focus {
+        color: $input-focus-color;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: $input-focus-box-shadow;
+    }
+    &::placeholder {
+        color: $input-placeholder-color;
+        opacity: 1;
+    }
+    &:disabled {
+        background-color: $input-disabled-bg;
+        border-color: $input-disabled-border-color;
+        opacity: 1;
+
+        &:hover {
+            border: $input-border-width solid $input-border-color;
+        }
+    }
+}
+.sd-input-group-prepend,
+.sd-input-group-append {
+    display: flex;
+    align-items: center;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-font-size;
+    font-weight: $font-weight-normal;
+    line-height: $input-line-height;
+    color: $input-group-addon-color;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $input-group-addon-bg;
+    border: $input-border-width solid $input-group-addon-border-color;
+    border-radius: $input-border-radius;
+}
+
+.input-group > .sd-input-group-prepend,
+.input-group.input-group-append > .sd-input-inner {
+    @include border-right-radius(0);
+}
+
+.input-group > .sd-input-group-append,
+.input-group.input-group-prepend > .sd-input-inner {
+    @include border-left-radius(0);
+}
+
+.input-size-sm .sd-input-inner {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    font-size: $input-font-size-sm;
+    border-radius: $input-border-radius-sm;
+}
+
+.input-size-md .sd-input-inner {
+    padding: $input-padding-y-md $input-padding-x-md;
+    font-size: $input-font-size-md;
+    border-radius: $input-border-radius-md;
+}
+
+.input-size-lg .sd-input-inner {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    font-size: $input-font-size-lg;
+    border-radius: $input-border-radius-lg;
+}

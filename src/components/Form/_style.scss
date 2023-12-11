@@ -1,0 +1,46 @@
+.sd-form {
+    .sd-row {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 1.5625rem;
+        &.sd-row-no-label {
+            flex-direction: row-reverse;
+        }
+        .sd-form-item-label {
+            flex-basis: 15%;
+            text-align: right;
+            padding-right: 1.25rem;
+            > label {
+                margin-bottom: 0;
+            }
+            > label.sd-form-item-required:before {
+                display: inline-block;
+                margin-right: 0.25rem;
+                color: $danger;
+                font-size: 0.875rem;
+                content: '*';
+            }
+        }
+        .sd-form-item {
+            flex-basis: 85%;
+            position: relative;
+            min-height: 50px;
+
+            .sd-form-item-error.sd-form-item-control {
+                .sd-input-inner {
+                    border: 1px solid $danger;
+                    &:focus {
+                        box-shadow: $input-focus-box-shadow-error;
+                    }
+                }
+            }
+            .sd-form-item-error-explain {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                color: $danger;
+                min-width: 6.25rem;
+            }
+        }
+    }
+}
