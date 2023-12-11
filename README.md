@@ -6,7 +6,7 @@
 
 #### 網頁預覽:
 
-https://65534b40d69dbda616ec9ec2-bhzoyvhxcu.chromatic.com/
+https://6576de9a5c60d3bd31c47376-aysjetbmmw.chromatic.com/
 
 #### 示意圖:
 ![Storybook](https://github.com/ShenDing1125/UI-Components/blob/main/%E9%9D%9C%E6%85%8B%E8%B3%87%E6%BA%90/Pictures/UI-Storybook.png)
